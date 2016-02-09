@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DjangoApp</title>
+    </head>
+
+    <body>
+        <h1>Add a tasty Tapa</h1>
+
+
+        <form id="TapaForm" method="post" action="/DjangoApp1/add_tapa/{{ bar.slug }}/">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input type="submit" name="submit" value="Add Tapa" />
+        </form>
+    </body>
+
+</html>

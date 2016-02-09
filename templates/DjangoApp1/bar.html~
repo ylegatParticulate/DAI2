@@ -1,0 +1,65 @@
+{% extends "DjangoApp1/base.html" %}
+{% block title %}Bares y tapas{% endblock %}
+{% block side_block %}{% endblock %}
+{% load easy_maps_tags %}
+{% load easy_maps_tags cache %}
+{% block body_block %}
+<div><button id="normal-btn">NORMAL</button>
+<button id="big-btn">BIG</button>
+<button id="huge-btn">HUGE</button></div>
+
+<table>
+    <tr>
+        <h2>{{ bar_nombre }}</h2>
+        
+    </tr>
+    <tr>
+ 	<p>Google Map Location: </p>
+        {% load easy_maps_tags %}
+	{% easy_map bar.direccion 350 200 %}  
+	Die Addresse lautet: {{bar.direccion}}     
+    </tr>
+</table>
+        <h3>insgesamt haben {{ bar.num_visitas }} Besucher diese Bar besucht</h3>
+        {% if bar %}
+	<p>
+
+	<strong id="like_count">{{ bar.likes }}</strong> people like this bar
+
+	{% if user.is_authenticated %}
+		<button id="likes_bar" data-barid="{{bar.slug}}" class="btn btn-primary" type="button">
+		<span class="glyphicon glyphicon-thumbs-up"></span>
+		Like Bar
+		</button>
+	{% endif %}
+
+	</p>
+       
+            {% if tapas %}
+            <ul>
+                {% for tapa in tapas %}
+                <li><h2>{{ tapa.nombre }}</h2></li>
+		
+		<p>
+
+
+	<strong id="like_count">{{ tapa.likes }}</strong> people like this tapa
+
+	{% if user.is_authenticated %}
+		<button id="like_tapas" data-tapid="{{tapas.slug}}" class="btn btn-primary" type="button">
+		<span class="glyphicon glyphicon-thumbs-up"></span>
+		Like
+		</button>
+	{% endif %}
+
+	</p>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>There are no tapas actually in this bar</strong>
+            {% endif %}
+        {% else %}
+            This {{ bar_nombre }} don exsist.
+         {% endif %}
+                <a href="/DjangoApp1/add_tapa/{{bar.slug}}/">Add a new Tapa to this bar</a><br />
+{% endblock %}

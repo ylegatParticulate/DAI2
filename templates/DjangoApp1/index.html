@@ -1,0 +1,36 @@
+{% extends "DjangoApp1/base.html" %}
+{% block title %}Index
+{% endblock %}
+{% block side_block %}
+<div class="col-xs-12 col-sm-3 placeholder" ><img src="/static/images/tapas3.jpg" / height="142" width="142">
+<img src="/static/images/tapas2.jpg" / height="142" width="142"><img src="/static/images/tapas.jpg" / height="142" width="142"></div>
+{% endblock %}
+{% block body_block %}
+{% if user.is_authenticated %}
+<div><button id="normal-btn">NORMAL</button>
+<button id="big-btn">BIG</button>
+<button id="huge-btn">HUGE</button></div>
+<a class="navbar-brand" href="/DjangoApp1/restricted/">Restricted Page</a>
+<a class="navbar-brand" href="/DjangoApp1/mainpage">MainPage</a>
+<a class="navbar-brand" href="/DjangoApp1/about/">About</a>
+<a class="navbar-brand" href="/DjangoApp1/profile/">Profile</a>
+<a class="navbar-brand" href="/DjangoApp1/logout/">Logout</a><br />
+{% else %}
+<a href="/DjangoApp1/register/">Register Here</a><br />
+<a href="/DjangoApp1/login/">Login</a><br />
+{% endif %}
+<br><br>
+
+<h1>TAPAS PARADISE</h1>
+
+
+
+<br><br>
+
+		
+
+<div><p>Hallo dies ist ein index test Text. Viele werden dies nicht verstehen, da es sich um einen deutschen Text handelt.Tja wer keine Sprachen kann, sollte auch nicht erwarten diesen Müll hier zu verstehen. Leider weiß ich auch nciht was man hier noch schreiben sollte. der blöde Knopf für das gefällt mir, ist leider mga behindert gewesen...</p></div>
+
+
+      
+{% endblock %}

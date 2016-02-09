@@ -1,0 +1,26 @@
+{% extends "DjangoApp1/base.html" %}
+{% block title %}Index{% endblock %}
+{% block side_block %}{% endblock %}
+{% block body_block %}
+ 	{% if user.is_authenticated %}
+	<a class="navbar-brand" href="/DjangoApp1/restricted/">Restricted Page</a>
+	<a class="navbar-brand" href="/DjangoApp1/mainpage">MainPage</a>
+	<a class="navbar-brand" href="/DjangoApp1/about/">About</a>
+	<a class="navbar-brand" href="/DjangoApp1/profile/">Profile</a>
+	<a class="navbar-brand" href="/DjangoApp1/logout/">Logout</a>
+
+	<br><br>
+	<br>	
+	<li><p> username:{{user.username}}</p></li>
+	<br>
+	<p> email : {{user.email}}</p>
+	<div class="col-xs-12 col-sm-6 placeholder" ><img src="/static/profile_images/{{user.username}}.jpg" / ></div>	
+
+	<div class="col-xs-12 col-sm-6 placeholder" ><img src="/media/{{profile.picture}}" / ></div>	
+	{% else %}
+
+	<a href="/DjangoApp1/register/">Register Here</a><br />
+	<a href="/DjangoApp1/login/">Login</a><br />
+	{% endif %}
+
+{% endblock %}

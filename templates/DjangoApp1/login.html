@@ -1,0 +1,29 @@
+{% extends "DjangoApp1/base.html" %}
+{% block side_block %}
+<div class="col-xs-12 col-sm-3 placeholder" ><img src="/static/images/tapas3.jpg" / height="142" width="142">
+<img src="/static/images/tapas2.jpg" / height="142" width="142"><img src="/static/images/tapas.jpg" / height="142" width="142"></div>
+{% endblock %}
+{% block body_block %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Rango</title>
+    </head>
+
+    <body>
+        <h1>Login to homepage</h1>
+
+        <form id="login_form" method="post" action="/DjangoApp1/login/">
+            {% csrf_token %}
+            Username: <input type="text" name="username" value="" size="50" />
+            <br />
+            Password: <input type="password" name="password" value="" size="50" />
+            <br />
+
+            <input type="submit" value="submit" />
+        </form>
+
+    </body>
+</html>
+{% endblock %}

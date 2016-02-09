@@ -1,0 +1,38 @@
+{% extends "DjangoApp1/base.html" %}
+{% block title %}Index{% endblock %}
+{% block side_block %}
+<div class="col-xs-12 col-sm-3 placeholder" ><img src="/static/images/tapas3.jpg" / height="142" width="142">
+<img src="/static/images/tapas2.jpg" / height="142" width="142"><img src="/static/images/tapas.jpg" / height="142" width="142"></div>
+{% endblock %}
+{% block body_block %}
+<a class="navbar-brand" href="/DjangoApp1/restricted/">Restricted Page</a>
+<a class="navbar-brand" href="/DjangoApp1/mainpage">MainPage</a>
+<a class="navbar-brand" href="/DjangoApp1/about/">About</a>
+<a class="navbar-brand" href="/DjangoApp1/profile/">Profile</a>
+<a class="navbar-brand" href="/DjangoApp1/logout/">Logout</a><br />
+<br><br>
+<h1>Tapas Bar Overview:</h1>
+        {% if bares %}
+            <ul>
+                {% for bar in bares %}
+                <li><a href="/DjangoApp1/bar/{{ bar.slug }}">{{ bar.nombre }}  {{bar.num_visitas}}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no bares!</strong>
+        {% endif %}
+
+<br>
+
+	<div id="container" style="width:100%; height:400px;"></div>
+
+        <div class="col-xs-12 col-sm-6 placeholder" id="container" style="height: 300px"></div>
+
+	
+
+
+
+
+
+
+{% endblock %}

@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7&^mkfdp7e6wwwwt*!^*b8hq4y+vr&(pgc)=s!$o3)iu5vd#_-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,6 +126,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_PATH = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
@@ -148,4 +149,6 @@ EASY_MAPS_CENTER = (-41.3, 32)
 # Default: 'easy_maps.geocode.google_v3'
 #EASY_MAPS_GEOCODE = 'example.custom_geocode'
 EASY_MAPS_GOOGLE_KEY = "your-google-maps-api-key"
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 

@@ -1,7 +1,9 @@
 {% extends "DjangoApp1/base.html" %}
 {% block title %}Index
 {% endblock %}
-{% block side_block %}{% endblock %}
+{% block side_block %}
+
+{% endblock %}
 {% block body_block %}
 {% if user.is_authenticated %}
 <div><button id="normal-btn">NORMAL</button>

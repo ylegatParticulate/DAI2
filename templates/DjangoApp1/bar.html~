@@ -1,6 +1,7 @@
 {% extends "DjangoApp1/base.html" %}
 {% block title %}Bares y tapas{% endblock %}
 {% block side_block %}{% endblock %}
+
 {% load easy_maps_tags %}
 {% load easy_maps_tags cache %}
 {% block body_block %}
@@ -46,7 +47,7 @@
 	<strong id="like_count">{{ tapa.likes }}</strong> people like this tapa
 
 	{% if user.is_authenticated %}
-		<button id="like_tapas" data-tapid="{{tapas.slug}}" class="btn btn-primary" type="button">
+		<button id="like_tapa{{tapa.id}}" data-tapid="{{tapa.id}}" class="btn btn-primary" type="button">
 		<span class="glyphicon glyphicon-thumbs-up"></span>
 		Like
 		</button>

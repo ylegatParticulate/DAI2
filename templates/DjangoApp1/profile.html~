@@ -1,6 +1,9 @@
 {% extends "DjangoApp1/base.html" %}
 {% block title %}Index{% endblock %}
-{% block side_block %}{% endblock %}
+{% block side_block %}
+<div class="col-xs-12 col-sm-3 placeholder" ><img src="/static/images/tapas3.jpg" / height="142" width="142">
+<img src="/static/images/tapas2.jpg" / height="142" width="142"><img src="/static/images/tapas.jpg" / height="142" width="142"></div>
+{% endblock %}
 {% block body_block %}
  	{% if user.is_authenticated %}
 	<a class="navbar-brand" href="/DjangoApp1/restricted/">Restricted Page</a>

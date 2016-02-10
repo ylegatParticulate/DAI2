@@ -44,10 +44,10 @@ $('#likes_bar').click(function(){
 
 });
 
-$('#likes_tapas').click(function(){
+$('#[id^="likes_tapas"]').click(function(){
     var tapid;
     tapid = $(this).attr("data-tapid");
-    $.get('/DjangoApp1/like_tapas/', {tapas_slug: tapid}, function(data){
+    $.get('/DjangoApp1/like_tapas/', {tapas_id: tapid}, function(data){
                $('#like_count').html(data);
                $('#likes_tapas').hide();
 	});
